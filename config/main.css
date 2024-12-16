@@ -13,12 +13,12 @@
   transition: all 0.3s ease;
 }
 
-/* Set background image */
+/* Set background image with zoomed-out effect */
 body {
-  background-image: url('https://st3.depositphotos.com/1798678/15376/v/450/depositphotos_153767624-stock-illustration-waffle-texture-beautiful-banner-wallpaper.jpg'); /* Replace with your image URL */
-  background-size: cover; /* Ensures it covers the entire viewport */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent tiling */
+  background-image: url('https://st3.depositphotos.com/1798678/15376/v/450/depositphotos_153767624-stock-illustration-waffle-texture-beautiful-banner-wallpaper.jpg');
+  background-size: contain; 120 /* Ensures less zoomed-in effect */
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--text-color);
   font-family: "ubuntu", sans-serif;
   margin: 0;
@@ -45,6 +45,7 @@ body {
   text-align: center;
   transition: all 0.3s ease-in-out;
 }
+
 #searchInput:focus {
   border: 3px solid var(--accent-color);
 }
