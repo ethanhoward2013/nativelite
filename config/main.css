@@ -1,6 +1,6 @@
 /* Import custom styles */
 @import url(/./config/custom.css);
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://www.icolorpalette.com/download/solidcolorimage/ad8460_solid_color_background_icolorpalette.png");
 
 :root {
   --text-color: white !important;
@@ -16,7 +16,7 @@
 /* Set background image with zoomed-out effect */
 body {
   background-image: url('https://st3.depositphotos.com/1798678/15376/v/450/depositphotos_153767624-stock-illustration-waffle-texture-beautiful-banner-wallpaper.jpg');
-  background-size: contain; 120 /* Ensures less zoomed-in effect */
+  background-size: contain; /* Ensures less zoomed-in effect */
   background-position: center;
   background-repeat: no-repeat;
   color: var(--text-color);
