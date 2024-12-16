@@ -2,13 +2,13 @@
 @import url(/./config/custom.css);
 
 :root {
-  --text-color: white !important;
+  --text-color: black !important;
   --accent-color: #FFA500 !important;
 }
 
 /* General styles */
 * {
-  font-family: ubuntu;
+  font-family: cosmic sans;
   transition: all 0.3s ease;
 }
 
