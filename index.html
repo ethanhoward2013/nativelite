@@ -1,25 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="config/main.css" />
-    <script src="config/main.js" type="module"></script>
-  </head>
-  <body>
-    <div class="center">
-      <h1 id="title"></h1>
-      <p id="subtitle"></p>
-    </div>
-    <div class="center">
-      <input type="text" id="searchInput" placeholder="Search games" />
-    </div>
-    <div id="gamesContainer"></div>
-    <div class="footer">
-      <a style="font-weight: 700">a site by
-      </a><a style="font-weight: 700" class="link" href="https://dsc.gg/parcoil">parcoil network</a>
-    </div>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waffles Unblocked Games</title>
+  <style>
+    /* Import custom styles */
+    @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
+    :root {
+      --background-color: #222;
+      --text-color: #fff;
+      --accent-color: #ffcc00;
+      --button-color: #444;
+      --button-hover: #666;
+    }
+
+    * {
+      font-family: Ubuntu, sans-serif;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    /* General styles */
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* Site title styling */
+    .site-title {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--accent-color);
+      text-align: center;
+      margin: 20px 0;
+      text-transform: uppercase;
+    }
+
+    /* Homepage section */
+    #homePage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #homePage button {
+      background: var(--button-color);
+      color: var(--text-color);
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+
+    #homePage button:hover {
+      background: var(--button-hover);
+    }
+
+    /* Games container styles */
+    #gamesContainer {
+      display: none; /* Hide games by default */
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    /* Game card styles */
+    .game {
+      background: var(--button-color);
+      padding: 15px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .game:hover {
+      transform: scale(1.05);
+      background: var(--button-hover);
+    }
+
+    /* Game image styles */
+    .game img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+
+    /* Game description styles */
+    .game p {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    /* Responsive adjustments */
+    @media only screen and (max-width: 600px) {
+      .game {
+        flex-basis: calc(50% - 20px);
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      .game {
+        flex-basis: calc(100% - 20px);
+      }
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer {
+      margin: 20px auto;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .link {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Homepage -->
+  <div id="homePage">
+    <h1 class="site-title">Waffles Unblocked Games</h1>
+    <button id="startButton">Play Games</button>
+  </div>
+
+  <!-- Games Container -->
+  <div id="gamesContainer">
+    <div class="game"><img src="game1.jpg" alt="Game 1"><p>Game 1</p></div>
+    <div class="game"><img src="game2.jpg" alt="Game 2"><p>Game 2</p></div>
+    <div class="game"><img src="game3.jpg" alt="Game 3"><p>Game 3</p></div>
+    <div class="game"><img src="game4.jpg" alt="Game 4"><p>Game 4</p></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Function to show games and hide homepage
+      function showGames() {
+        document.getElementById("homePage").style.display = "none";
+        document.getElementById("gamesContainer").style.display = "flex";
+      }
+
+      // Attach function to the button
+      let startButton = document.getElementById("startButton");
+      if (startButton) {
+        startButton.addEventListener("click", showGames);
+      }
+
+      // Randomly shuffle games on page load
+      let container = document.getElementById("gamesContainer");
+      if (container) {
+        let games = Array.from(container.children);
+        games.sort(() => Math.random() - 0.5);
+        games.forEach((game) => container.appendChild(game));
+      }
+    });
+  </script>
+
+</body>
+</html>
