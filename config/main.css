@@ -52,6 +52,14 @@ body {
   box-sizing: border-box;
 }
 
+/* Randomize game order on page load */
+document.addEventListener("DOMContentLoaded", function() {
+  let container = document.getElementById("gamesContainer");
+  let games = Array.from(container.children);
+  games.sort(() => Math.random() - 0.5);
+  games.forEach(game => container.appendChild(game));
+});
+
 /* Game card styles */
 .game {
   margin: 10px;
