@@ -39,16 +39,46 @@ body {
   content: "Waffles Unblocked Games";
 }
 
+/* Homepage section */
+#homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#homePage button {
+  background: var(--button-color);
+  color: var(--text-color);
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+}
+
+#homePage button:hover {
+  background: var(--button-hover);
+}
+
 /* Games container styles */
 #gamesContainer {
-  display: flex;
+  display: none; /* Hide games by default */
   flex-wrap: wrap;
   justify-content: center;
   padding: 20px;
   gap: 20px;
 }
 
-/* Randomize game order on page load */
+/* Show games when button is clicked */
+function showGames() {
+  document.getElementById("homePage").style.display = "none";
+  document.getElementById("gamesContainer").style.display = "flex";
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   let container = document.getElementById("gamesContainer");
   let games = Array.from(container.children);
